@@ -27,8 +27,7 @@ Listar Tipo Documentos
   FOR  ${count}  IN RANGE  0  ${count_tipo_documento}
 
       ${tipo_documento}=	Get Element Text	${result_xml}	 *//tiposDocumento//tipoDocumento[${count+1}]  utf-8
-      # ${tipo_documento}=	Get Element Attributes	${result_xml}	 *//tiposDocumento//tipoDocumento[${count+1}]
-      # @{tipo_documento}=	Get Elements Texts	${result_xml}	 *//tiposDocumento//tipoDocumento[${count+1}]
+  
       Log  ${tipo_documento}
       Log To Console  ${tipo_documento}
   END
