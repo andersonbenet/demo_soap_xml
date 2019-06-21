@@ -10,7 +10,7 @@ Library  BuiltIn
 *** Keywords ***
 Listar Tipo Documentos
   Create Soap Client  http://ws-cred12c.hom.sicredi.net:80/UploadDocumentosVeiculosBean/UploadDocumentosVeiculosService?wsdl
-  ${payload_xml}=  Get File  C:\\Users\\anderson_benet\\Desktop\\demo_robot_soap_docker\\xml\\search_book.xml
+  ${payload_xml}=  Get File  C:\\Users\\anderson_benet\\Documents\\git_robotframework\\demo_soap_xml\\xml\\search_book.xml
   Log  ${payload_xml}
   ${result}    Call Soap Method    listarTiposDeDocumentos    ${payload_xml}
   ${result}    Get Last Received
