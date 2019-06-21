@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <upl:listarTiposDeDocumentos>
+         <arg0/>
+      </upl:listarTiposDeDocumentos>
+   </soapenv:Body>
+</soapenv:Envelope>
