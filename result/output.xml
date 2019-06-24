@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190624 17:39:14.802" generator="Robot 3.0.2 (Python 2.7.15 on win32)">
+<suite source="C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\test\UploadDocumentTest.robot" id="s1" name="UploadDocumentTest">
+<test id="s1-t1" name="TC 001: Listar Tipos De Documentos">
+<kw name="Listar Tipo Documentos" library="UploadDocumentResource">
+<kw name="Set Jenkins Server" library="JenkinsLibrary">
+<arguments>
+<arg>url=http://localhost:9090</arg>
+<arg>username=anderson_benet</arg>
+<arg>password=Javac@2019</arg>
+</arguments>
+<msg timestamp="20190624 17:39:15.742" level="FAIL">Can't connect to Jenkins: Error communicating with server[http://localhost:9090/]</msg>
+<status status="FAIL" endtime="20190624 17:39:15.742" starttime="20190624 17:39:15.719"></status>
+</kw>
+<status status="FAIL" endtime="20190624 17:39:15.743" starttime="20190624 17:39:15.719"></status>
+</kw>
+<status status="FAIL" endtime="20190624 17:39:15.743" critical="yes" starttime="20190624 17:39:15.718">Can't connect to Jenkins: Error communicating with server[http://localhost:9090/]</status>
+</test>
+<status status="FAIL" endtime="20190624 17:39:15.746" starttime="20190624 17:39:14.809"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="UploadDocumentTest" pass="0">UploadDocumentTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
