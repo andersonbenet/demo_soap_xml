@@ -1,32 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20190624 17:39:14.802" generator="Robot 3.0.2 (Python 2.7.15 on win32)">
-<suite source="C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\test\UploadDocumentTest.robot" id="s1" name="UploadDocumentTest">
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190626 13:57:20.456" rpa="false">
+<suite id="s1" name="UploadDocumentTest" source="C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\test\UploadDocumentTest.robot">
 <test id="s1-t1" name="TC 001: Listar Tipos De Documentos">
 <kw name="Listar Tipo Documentos" library="UploadDocumentResource">
-<kw name="Set Jenkins Server" library="JenkinsLibrary">
+<kw name="Create Soap Client" library="SudsLibrary">
+<doc>Loads a WSDL from the given URL/path and creates a Suds SOAP client.</doc>
 <arguments>
-<arg>url=http://localhost:9090</arg>
-<arg>username=anderson_benet</arg>
-<arg>password=Javac@2019</arg>
+<arg>${wsdl_url}</arg>
 </arguments>
-<msg timestamp="20190624 17:39:15.742" level="FAIL">Can't connect to Jenkins: Error communicating with server[http://localhost:9090/]</msg>
-<status status="FAIL" endtime="20190624 17:39:15.742" starttime="20190624 17:39:15.719"></status>
+<msg timestamp="20190626 13:57:20.852" level="INFO">Using WSDL at http://ws-cred12c.hom.sicredi.net:80/UploadDocumentosVeiculosBean/UploadDocumentosVeiculosService?wsdl
+Suds ( https://fedorahosted.org/suds/ )  version: 0.6
+
+Service ( UploadDocumentosVeiculosService ) tns="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"
+   Prefixes (2)
+      ns0 = "http://sicredi.com.br/arqref/exception/binding/"
+      ns1 = "http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"
+   Ports (1):
+      (UploadDocumentosVeiculosServicePort)
+         Methods (3):
+            anexar(InAnexar arg0)
+            consultar(InConsultar arg0)
+            listarTiposDeDocumentos(InListarTiposDeDocumentos arg0)
+         Types (15):
+            InAnexar
+            InConsultar
+            InListarTiposDeDocumentos
+            OutAnexar
+            OutConsultar
+            OutListarTiposDeDocumentos
+            ns0:ServException
+            anexar
+            anexarResponse
+            consultar
+            consultarResponse
+            ns0:faultService
+            listarTiposDeDocumentos
+            listarTiposDeDocumentosResponse
+            ns0:tipoErro
+
+</msg>
+<status status="PASS" starttime="20190626 13:57:20.733" endtime="20190626 13:57:20.853"></status>
 </kw>
-<status status="FAIL" endtime="20190624 17:39:15.743" starttime="20190624 17:39:15.719"></status>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>C:\\Users\\anderson_benet\\Documents\\git_robotframework\\demo_soap_xml\\resource\\xml\\search_book.xml</arg>
+</arguments>
+<assign>
+<var>${request}</var>
+</assign>
+<msg timestamp="20190626 13:57:20.853" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\search_book.xml"&gt;C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\search_book.xml&lt;/a&gt;'.</msg>
+<msg timestamp="20190626 13:57:20.855" level="INFO">${request} = &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+ ...</msg>
+<status status="PASS" starttime="20190626 13:57:20.853" endtime="20190626 13:57:20.855"></status>
 </kw>
-<status status="FAIL" endtime="20190624 17:39:15.743" critical="yes" starttime="20190624 17:39:15.718">Can't connect to Jenkins: Error communicating with server[http://localhost:9090/]</status>
+<kw name="Create Raw Soap Message" library="SudsLibrary">
+<doc>Returns an object that can used in lieu of SOAP method arguments.</doc>
+<arguments>
+<arg>${request}</arg>
+</arguments>
+<assign>
+<var>${request}</var>
+</assign>
+<msg timestamp="20190626 13:57:20.856" level="INFO">${request} = &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+ ...</msg>
+<status status="PASS" starttime="20190626 13:57:20.856" endtime="20190626 13:57:20.856"></status>
+</kw>
+<kw name="Call Soap Method" library="SudsLibrary">
+<doc>Calls the SOAP method with the given `name` and `args`.</doc>
+<arguments>
+<arg>listarTiposDeDocumentos</arg>
+<arg>${request}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20190626 13:57:20.859" level="INFO">Sending:
+&lt;?xml version="1.0" ?&gt;
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
+  &lt;soapenv:Header/&gt;
+  &lt;soapenv:Body&gt;
+    &lt;upl:listarTiposDeDocumentos&gt;
+      &lt;arg0/&gt;
+    &lt;/upl:listarTiposDeDocumentos&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</msg>
+<msg timestamp="20190626 13:57:21.616" level="INFO">Received:
+&lt;?xml version="1.0" ?&gt;
+&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;S:Header&gt;
+    &lt;WorkContext xmlns="http://oracle.com/weblogic/soap/workarea/"&gt;rO0ABXdqADB3ZWJsb2dpYy5hcHAuc2ljcmVkaS1zZXJ2aWNvcy11Y20tZW50ZXJwcmlzZS1lYXIAAADWAAAAI3dlYmxvZ2ljLndvcmthcmVhLlN0cmluZ1dvcmtDb250ZXh0AAkxLjE4LjAuMTIAAA==&lt;/WorkContext&gt;
+  &lt;/S:Header&gt;
+  &lt;S:Body&gt;
+    &lt;ns3:listarTiposDeDocumentosResponse xmlns:aren="http://sicredi.com.br/arqref/exception/binding/" xmlns:ns3="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
+      &lt;return&gt;
+        &lt;tiposDocumento&gt;
+          &lt;tipoDocumento&gt;CRV assinado&lt;/tipoDocumento&gt;
+          &lt;tipoDocumento&gt;CRV do veículo&lt;/tipoDocumento&gt;
+          &lt;tipoDocumento&gt;Nota Fiscal&lt;/tipoDocumento&gt;
+        &lt;/tiposDocumento&gt;
+      &lt;/return&gt;
+    &lt;/ns3:listarTiposDeDocumentosResponse&gt;
+  &lt;/S:Body&gt;
+&lt;/S:Envelope&gt;
+</msg>
+<msg timestamp="20190626 13:57:21.619" level="INFO">${response} = (OutListarTiposDeDocumentos){
+   tiposDocumento = 
+      (tiposDocumento){
+         tipoDocumento[] = 
+            "CRV assinado",
+            "CRV do veículo",
+            "Nota Fiscal",
+      }
+ }</msg>
+<status status="PASS" starttime="20190626 13:57:20.856" endtime="20190626 13:57:21.619"></status>
+</kw>
+<kw name="Get Last Received" library="SudsLibrary">
+<doc>Gets the XML last received.</doc>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.621" level="INFO">${response} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Header&gt;&lt;WorkContext xmlns="http://oracle.com/weblogic/soap/workarea/"&gt;rO0ABXdqADB3ZWJsb2dpYy5hc...</msg>
+<status status="PASS" starttime="20190626 13:57:21.619" endtime="20190626 13:57:21.621"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${parse_string}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.622" level="INFO">${parse_string} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Header&gt;&lt;WorkContext xmlns="http://oracle.com/weblogic/soap/workarea/"&gt;rO0ABXdqADB3ZWJsb2dpYy5hc...</msg>
+<status status="PASS" starttime="20190626 13:57:21.621" endtime="20190626 13:57:21.623"></status>
+</kw>
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
+<arguments>
+<arg>${parse_string}</arg>
+</arguments>
+<assign>
+<var>${parse_xml}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.624" level="INFO">${parse_xml} = &lt;Element 'Envelope' at 0x0449D5D0&gt;</msg>
+<status status="PASS" starttime="20190626 13:57:21.623" endtime="20190626 13:57:21.624"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//tiposDocumento//tipoDocumento</arg>
+</arguments>
+<assign>
+<var>@{document}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.626" level="INFO">@{document} = [ CRV assinado | CRV do ve\xc3\xadculo | Nota Fiscal ]</msg>
+<status status="PASS" starttime="20190626 13:57:21.625" endtime="20190626 13:57:21.626"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${document}</arg>
+</arguments>
+<assign>
+<var>${count_list_document}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.627" level="INFO">Length is 3</msg>
+<msg timestamp="20190626 13:57:21.627" level="INFO">${count_list_document} = 3</msg>
+<status status="PASS" starttime="20190626 13:57:21.627" endtime="20190626 13:57:21.628"></status>
+</kw>
+<kw name="${count} IN RANGE [ 0 | ${count_list_document} ]" type="for">
+<kw name="${count} = 0" type="foritem">
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//tiposDocumento//tipoDocumento[${count+1}]</arg>
+</arguments>
+<assign>
+<var>${tipo_documento}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.630" level="INFO">${tipo_documento} = ['CRV assinado']</msg>
+<status status="PASS" starttime="20190626 13:57:21.629" endtime="20190626 13:57:21.631"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${tipo_documento}</arg>
+</arguments>
+<msg timestamp="20190626 13:57:21.633" level="INFO">['CRV assinado']</msg>
+<status status="PASS" starttime="20190626 13:57:21.631" endtime="20190626 13:57:21.633"></status>
+</kw>
+<status status="PASS" starttime="20190626 13:57:21.629" endtime="20190626 13:57:21.633"></status>
+</kw>
+<kw name="${count} = 1" type="foritem">
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//tiposDocumento//tipoDocumento[${count+1}]</arg>
+</arguments>
+<assign>
+<var>${tipo_documento}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.635" level="INFO">${tipo_documento} = ['CRV do ve\\xc3\\xadculo']</msg>
+<status status="PASS" starttime="20190626 13:57:21.634" endtime="20190626 13:57:21.635"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${tipo_documento}</arg>
+</arguments>
+<msg timestamp="20190626 13:57:21.636" level="INFO">['CRV do ve\\xc3\\xadculo']</msg>
+<status status="PASS" starttime="20190626 13:57:21.635" endtime="20190626 13:57:21.636"></status>
+</kw>
+<status status="PASS" starttime="20190626 13:57:21.633" endtime="20190626 13:57:21.636"></status>
+</kw>
+<kw name="${count} = 2" type="foritem">
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//tiposDocumento//tipoDocumento[${count+1}]</arg>
+</arguments>
+<assign>
+<var>${tipo_documento}</var>
+</assign>
+<msg timestamp="20190626 13:57:21.639" level="INFO">${tipo_documento} = ['Nota Fiscal']</msg>
+<status status="PASS" starttime="20190626 13:57:21.637" endtime="20190626 13:57:21.639"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${tipo_documento}</arg>
+</arguments>
+<msg timestamp="20190626 13:57:21.641" level="INFO">['Nota Fiscal']</msg>
+<status status="PASS" starttime="20190626 13:57:21.640" endtime="20190626 13:57:21.641"></status>
+</kw>
+<status status="PASS" starttime="20190626 13:57:21.637" endtime="20190626 13:57:21.641"></status>
+</kw>
+<status status="PASS" starttime="20190626 13:57:21.628" endtime="20190626 13:57:21.641"></status>
+</kw>
+<status status="PASS" starttime="20190626 13:57:20.733" endtime="20190626 13:57:21.641"></status>
+</kw>
+<status status="PASS" starttime="20190626 13:57:20.732" endtime="20190626 13:57:21.642" critical="yes"></status>
 </test>
-<status status="FAIL" endtime="20190624 17:39:15.746" starttime="20190624 17:39:14.809"></status>
+<status status="PASS" starttime="20190626 13:57:20.465" endtime="20190626 13:57:21.645"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="UploadDocumentTest" pass="0">UploadDocumentTest</stat>
+<stat pass="1" fail="0" id="s1" name="UploadDocumentTest">UploadDocumentTest</stat>
 </suite>
 </statistics>
 <errors>
