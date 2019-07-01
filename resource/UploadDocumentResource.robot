@@ -8,21 +8,23 @@ Library  Collections
 # Library  JenkinsLibrary
 
 *** Variable ***
-${wsdl_url}  http://ws-cred12c.hom.sicredi.net:80/UploadDocumentosVeiculosBean/UploadDocumentosVeiculosService?wsdl
+${wsdl_url}  http://app1sisatcc004d.des.sicredi.net:8002/UploadDocumentosVeiculosBean/UploadDocumentosVeiculosService?wsdl
 
 *** Keywords ***
 Listar Tipo Documentos
   # Set Jenkins Server    url=http://localhost:9090   username=anderson_benet    password=Javac@2019
   # Create Jenkins Job    test_job
   # Start Jenkins Job    test_job
-
+  ${tipo_documento}=  Set Variable  Nota Fiscal
 
   Create Soap Client  ${wsdl_url}
   ${request}=  Get File  ${CURDIR}\\xml\\search_book.xml
+  ${request}    Replace String  ${request}  tipo  ${tipo_documento}
+
   ${request}=  Create Raw Soap Message  ${request}
 
-  ${response}=  Call Soap Method  listarTiposDeDocumentos  ${request}
-  # @{price}=	 Get Wsdl Object Attribute	${response}  tiposDocumento
+  Call Soap Method   listarTiposDeDocumentos  ${request}
+#  @{price}=	 Get Wsdl Object Attribute	${request}  tiposDocumento
 
   ${response}=  Get Last Received
 
