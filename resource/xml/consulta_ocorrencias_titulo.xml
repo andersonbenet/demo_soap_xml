@@ -4,9 +4,8 @@
 	<soapenv:Header/>
 	<soapenv:Body>
 		<bol:consultaOcorrenciasTitulo>
-			<!--Optional:-->
 			<bol:InConsultaOcorrenciasTitulo>
-				<agEmissora>0307</agEmissora>
+				<agEmissora>agencia</agEmissora>
 				<dataConsulta>2019-06-06T00:00:00</dataConsulta>
 				<nossoNumero/>
 				<ocorrencias>

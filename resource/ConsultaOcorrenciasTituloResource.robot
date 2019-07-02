@@ -8,14 +8,14 @@ Library  BuiltIn
 
 *** Variable ***
 ${wsdl_url}  http://ws-cobranca12c2.hom.sicredi.net:80/ConsultasBean/ConsultasService?wsdl
+${agencia}=  0307
 
 *** Keywords ***
 Busca Ocorrencias
-  ${ag_emissora}=  Set Variable  0307
-
+  [Arguments]  ${agencia}
   Create Soap Client  ${wsdl_url}
   ${request}=  Get File  ${CURDIR}\\xml\\consulta_ocorrencias_titulo.xml
-#  ${request}    Replace String  ${request}  tipo  ${tipo_documento}
+  ${request}=  Replace String  ${request}  agencia  ${agencia}
 
   ${request}=  Create Raw Soap Message  ${request}
 
@@ -53,7 +53,7 @@ Busca Ocorrencias
     ${numParcela}=	Set Variable  @{lst_numParcela}[${count}]
     ${motivo}=	Set Variable  @{lst_motivo}[${count}]
 
-    Log To Console  \n-> Ocorrências:
+    Log To Console  \n-> Ocorrência:
     Log To Console  oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}
     ${count}=  Evaluate  ${count}+1
   END
