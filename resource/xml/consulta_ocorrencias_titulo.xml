@@ -1,0 +1,18 @@
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:bol="http://sicredi.com.br/cobranca/ws/v1/boleto/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<bol:consultaOcorrenciasTitulo>
+			<!--Optional:-->
+			<bol:InConsultaOcorrenciasTitulo>
+				<agEmissora>0307</agEmissora>
+				<dataConsulta>2019-06-06T00:00:00</dataConsulta>
+				<nossoNumero/>
+				<ocorrencias>
+					<ocorrencia>TODAS</ocorrencia>
+				</ocorrencias>
+			</bol:InConsultaOcorrenciasTitulo>
+		</bol:consultaOcorrenciasTitulo>
+	</soapenv:Body>
+</soapenv:Envelope>

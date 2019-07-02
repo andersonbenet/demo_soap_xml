@@ -1,87 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20190701 13:42:01.857" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
-<suite source="C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\test\UploadDocumentTest.robot" id="s1" name="UploadDocumentTest">
-<test id="s1-t1" name="TC 001: Listar Tipos De Documentos">
-<kw name="Listar Tipo Documentos" library="UploadDocumentResource">
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20190702 10:07:09.852" rpa="false">
+<suite id="s1" name="ConsultaOcorrenciasTituloTest" source="C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\test\ConsultaOcorrenciasTituloTest.robot">
+<test id="s1-t1" name="TC 001: Buscar Ocorrências Título">
+<kw name="Busca Ocorrencias" library="ConsultaOcorrenciasTituloResource">
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
 <arguments>
-<arg>Nota Fiscal</arg>
+<arg>0307</arg>
 </arguments>
 <assign>
-<var>${tipo_documento}</var>
+<var>${ag_emissora}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.123" level="INFO">${tipo_documento} = Nota Fiscal</msg>
-<status status="PASS" endtime="20190701 13:42:02.123" starttime="20190701 13:42:02.123"></status>
+<msg timestamp="20190702 10:07:11.532" level="INFO">${ag_emissora} = 0307</msg>
+<status status="PASS" starttime="20190702 10:07:11.531" endtime="20190702 10:07:11.532"></status>
 </kw>
 <kw name="Create Soap Client" library="SudsLibrary">
 <doc>Loads a WSDL from the given URL/path and creates a Suds SOAP client.</doc>
 <arguments>
 <arg>${wsdl_url}</arg>
 </arguments>
-<msg timestamp="20190701 13:42:02.218" level="INFO">Using WSDL at http://app1sisatcc004d.des.sicredi.net:8002/UploadDocumentosVeiculosBean/UploadDocumentosVeiculosService?wsdl
-Suds ( https://fedorahosted.org/suds/ )  version: 0.4 GA  build: R699-20100913
+<msg timestamp="20190702 10:07:11.833" level="INFO">Using WSDL at http://ws-cobranca12c2.hom.sicredi.net:80/ConsultasBean/ConsultasService?wsdl
+Suds ( https://fedorahosted.org/suds/ )  version: 0.6
 
-Service ( UploadDocumentosVeiculosService ) tns="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"
-   Prefixes (2)
+Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas/"
+   Prefixes (3)
       ns0 = "http://sicredi.com.br/arqref/exception/binding/"
-      ns1 = "http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"
+      ns1 = "http://sicredi.com.br/cobranca/ws/v1/boleto/"
+      ns2 = "http://sicredi.com.br/cobranca/ws/v1/consultas/"
    Ports (1):
-      (UploadDocumentosVeiculosServicePort)
-         Methods (3):
-            anexar(InAnexar arg0, )
-            consultar(InConsultar arg0, )
-            listarTiposDeDocumentos(InListarTiposDeDocumentos arg0, )
+      (ConsultasServicePort)
+         Methods (2):
+            consultaOcorrenciasTitulo(InConsultaOcorrenciasTitulo InConsultaOcorrenciasTitulo)
+            consultaSituacaoTitulo(InConsultaSituacaoTitulo InConsultaSituacaoTitulo)
          Types (15):
-            InAnexar
-            InConsultar
-            InListarTiposDeDocumentos
-            OutAnexar
-            OutConsultar
-            OutListarTiposDeDocumentos
+            InConsultaOcorrenciasTitulo
+            InConsultaSituacaoTitulo
+            Ocorrencias
+            OutConsultaOcorrenciasTitulo
+            OutConsultaSituacaoTitulo
             ns0:ServException
-            anexar
-            anexarResponse
-            consultar
-            consultarResponse
+            Situacoes
+            Titulo
+            TituloSituacao
+            ns1:consultaOcorrenciasTitulo
+            ns1:consultaOcorrenciasTituloResponse
+            consultaSituacaoTitulo
+            consultaSituacaoTituloResponse
             ns0:faultService
-            listarTiposDeDocumentos
-            listarTiposDeDocumentosResponse
             ns0:tipoErro
 
 </msg>
-<status status="PASS" endtime="20190701 13:42:02.218" starttime="20190701 13:42:02.123"></status>
+<status status="PASS" starttime="20190702 10:07:11.532" endtime="20190702 10:07:11.833"></status>
 </kw>
 <kw name="Get File" library="OperatingSystem">
 <doc>Returns the contents of a specified file.</doc>
 <arguments>
-<arg>C:\\Users\\anderson_benet\\Documents\\git_robotframework\\demo_soap_xml\\resource\\xml\\search_book.xml</arg>
+<arg>C:\\Users\\anderson_benet\\Documents\\git_robotframework\\demo_soap_xml\\resource\\xml\\consulta_ocorrencias_titulo.xml</arg>
 </arguments>
 <assign>
 <var>${request}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.219" html="yes" level="INFO">Getting file '&lt;a href="file://C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\search_book.xml"&gt;C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\search_book.xml&lt;/a&gt;'.</msg>
-<msg timestamp="20190701 13:42:02.221" level="INFO">${request} = &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
-   &lt;soapenv:Header/&gt;
-   &lt;soapenv:Body&gt;
- ...</msg>
-<status status="PASS" endtime="20190701 13:42:02.221" starttime="20190701 13:42:02.219"></status>
-</kw>
-<kw name="Replace String" library="String">
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<arguments>
-<arg>${request}</arg>
-<arg>tipo</arg>
-<arg>${tipo_documento}</arg>
-</arguments>
-<assign>
-<var>${request}</var>
-</assign>
-<msg timestamp="20190701 13:42:02.222" level="INFO">${request} = &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
-   &lt;soapenv:Header/&gt;
-   &lt;soapenv:Body&gt;
- ...</msg>
-<status status="PASS" endtime="20190701 13:42:02.222" starttime="20190701 13:42:02.221"></status>
+<msg timestamp="20190702 10:07:11.834" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\consulta_ocorrencias_titulo.xml"&gt;C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\consulta_ocorrencias_titulo.xml&lt;/a&gt;'.</msg>
+<msg timestamp="20190702 10:07:11.836" level="INFO">${request} = &lt;soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:bol="http://sicredi.com.br/cobranca/ws/v1/boleto/"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;bol:consultaOcorrenciasTit...</msg>
+<status status="PASS" starttime="20190702 10:07:11.834" endtime="20190702 10:07:11.836"></status>
 </kw>
 <kw name="Create Raw Soap Message" library="SudsLibrary">
 <doc>Returns an object that can used in lieu of SOAP method arguments.</doc>
@@ -91,55 +77,112 @@ Service ( UploadDocumentosVeiculosService ) tns="http://sicredi.com.br/credito/v
 <assign>
 <var>${request}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.224" level="INFO">${request} = &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
-   &lt;soapenv:Header/&gt;
-   &lt;soapenv:Body&gt;
- ...</msg>
-<status status="PASS" endtime="20190701 13:42:02.224" starttime="20190701 13:42:02.223"></status>
+<msg timestamp="20190702 10:07:11.836" level="INFO">${request} = &lt;soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:bol="http://sicredi.com.br/cobranca/ws/v1/boleto/"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;bol:consultaOcorrenciasTit...</msg>
+<status status="PASS" starttime="20190702 10:07:11.836" endtime="20190702 10:07:11.836"></status>
 </kw>
 <kw name="Call Soap Method" library="SudsLibrary">
 <doc>Calls the SOAP method with the given `name` and `args`.</doc>
 <arguments>
-<arg>listarTiposDeDocumentos</arg>
+<arg>consultaOcorrenciasTitulo</arg>
 <arg>${request}</arg>
 </arguments>
-<msg timestamp="20190701 13:42:02.230" level="INFO">Sending:
+<msg timestamp="20190702 10:07:11.861" level="INFO">Sending:
 &lt;?xml version="1.0" ?&gt;
-&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upl="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
+&lt;soapenv:Envelope xmlns:bol="http://sicredi.com.br/cobranca/ws/v1/boleto/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;soapenv:Header/&gt;
   &lt;soapenv:Body&gt;
-    &lt;upl:listarTiposDeDocumentos&gt;&amp;quot;Nota Fiscal&amp;quot;&lt;/upl:listarTiposDeDocumentos&gt;
+    &lt;bol:consultaOcorrenciasTitulo&gt;
+      &lt;bol:InConsultaOcorrenciasTitulo&gt;
+        &lt;agEmissora&gt;0307&lt;/agEmissora&gt;
+        &lt;dataConsulta&gt;2019-06-06T00:00:00&lt;/dataConsulta&gt;
+        &lt;nossoNumero/&gt;
+        &lt;ocorrencias&gt;
+          &lt;ocorrencia&gt;TODAS&lt;/ocorrencia&gt;
+        &lt;/ocorrencias&gt;
+      &lt;/bol:InConsultaOcorrenciasTitulo&gt;
+    &lt;/bol:consultaOcorrenciasTitulo&gt;
   &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
 </msg>
-<msg timestamp="20190701 13:42:02.368" level="INFO">Received:
+<msg timestamp="20190702 10:07:11.924" level="INFO">Received:
 &lt;?xml version="1.0" ?&gt;
 &lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;
-  &lt;S:Header&gt;
-    &lt;WorkContext xmlns="http://oracle.com/weblogic/soap/workarea/"&gt;rO0ABXdqADB3ZWJsb2dpYy5hcHAuc2ljcmVkaS1zZXJ2aWNvcy11Y20tZW50ZXJwcmlzZS1lYXIAAADWAAAAI3dlYmxvZ2ljLndvcmthcmVhLlN0cmluZ1dvcmtDb250ZXh0AAkxLjE4LjAuMTIAAA==&lt;/WorkContext&gt;
-  &lt;/S:Header&gt;
   &lt;S:Body&gt;
-    &lt;ns3:listarTiposDeDocumentosResponse xmlns:aren="http://sicredi.com.br/arqref/exception/binding/" xmlns:ns3="http://sicredi.com.br/credito/veiculos/ws/v1/uploadDocumentosVeiculos/"&gt;
-      &lt;return&gt;
-        &lt;tiposDocumento&gt;
-          &lt;tipoDocumento&gt;CRV assinado&lt;/tipoDocumento&gt;
-          &lt;tipoDocumento&gt;CRV do veículo&lt;/tipoDocumento&gt;
-          &lt;tipoDocumento&gt;Nota Fiscal&lt;/tipoDocumento&gt;
-        &lt;/tiposDocumento&gt;
-      &lt;/return&gt;
-    &lt;/ns3:listarTiposDeDocumentosResponse&gt;
+    &lt;ns0:consultaOcorrenciasTituloResponse xmlns:ns0="http://sicredi.com.br/cobranca/ws/v1/boleto/"&gt;
+      &lt;ns0:OutConsultaOcorrenciasTitulo&gt;
+        &lt;titulos&gt;
+          &lt;oidMovimento&gt;1897723790&lt;/oidMovimento&gt;
+          &lt;agCedente&gt;030701&lt;/agCedente&gt;
+          &lt;beneficiario&gt;58069&lt;/beneficiario&gt;
+          &lt;nossoNumero&gt;191001378&lt;/nossoNumero&gt;
+          &lt;seuNumero&gt;B919326461&lt;/seuNumero&gt;
+          &lt;vlrNominal&gt;46.41&lt;/vlrNominal&gt;
+          &lt;dataOcorrencia&gt;2019-06-06T00:00:00-03:00&lt;/dataOcorrencia&gt;
+          &lt;ocorrencia&gt;ENTRADA_CONFIRMADA&lt;/ocorrencia&gt;
+          &lt;codOcorrencia&gt;02&lt;/codOcorrencia&gt;
+          &lt;numParcela&gt;01&lt;/numParcela&gt;
+          &lt;motivo&gt;00&lt;/motivo&gt;
+        &lt;/titulos&gt;
+        &lt;titulos&gt;
+          &lt;oidMovimento&gt;1897723791&lt;/oidMovimento&gt;
+          &lt;agCedente&gt;030701&lt;/agCedente&gt;
+          &lt;beneficiario&gt;58069&lt;/beneficiario&gt;
+          &lt;nossoNumero&gt;191001386&lt;/nossoNumero&gt;
+          &lt;seuNumero&gt;B919326461&lt;/seuNumero&gt;
+          &lt;vlrNominal&gt;46.4&lt;/vlrNominal&gt;
+          &lt;dataOcorrencia&gt;2019-06-06T00:00:00-03:00&lt;/dataOcorrencia&gt;
+          &lt;ocorrencia&gt;ENTRADA_CONFIRMADA&lt;/ocorrencia&gt;
+          &lt;codOcorrencia&gt;02&lt;/codOcorrencia&gt;
+          &lt;numParcela&gt;02&lt;/numParcela&gt;
+          &lt;motivo&gt;00&lt;/motivo&gt;
+        &lt;/titulos&gt;
+        &lt;titulos&gt;
+          &lt;oidMovimento&gt;1897724085&lt;/oidMovimento&gt;
+          &lt;agCedente&gt;030701&lt;/agCedente&gt;
+          &lt;beneficiario&gt;58069&lt;/beneficiario&gt;
+          &lt;nossoNumero&gt;191001378&lt;/nossoNumero&gt;
+          &lt;seuNumero&gt;B919326461&lt;/seuNumero&gt;
+          &lt;vlrNominal&gt;46.41&lt;/vlrNominal&gt;
+          &lt;vlrLiquidado&gt;19.3&lt;/vlrLiquidado&gt;
+          &lt;dataOcorrencia&gt;2019-06-06T00:00:00-03:00&lt;/dataOcorrencia&gt;
+          &lt;ocorrencia&gt;LIQUIDADO&lt;/ocorrencia&gt;
+          &lt;codOcorrencia&gt;06&lt;/codOcorrencia&gt;
+          &lt;numParcela&gt;01&lt;/numParcela&gt;
+          &lt;motivo&gt;00&lt;/motivo&gt;
+        &lt;/titulos&gt;
+        &lt;titulos&gt;
+          &lt;oidMovimento&gt;1897724238&lt;/oidMovimento&gt;
+          &lt;agCedente&gt;030701&lt;/agCedente&gt;
+          &lt;beneficiario&gt;58069&lt;/beneficiario&gt;
+          &lt;nossoNumero&gt;191001386&lt;/nossoNumero&gt;
+          &lt;seuNumero&gt;B919326461&lt;/seuNumero&gt;
+          &lt;vlrNominal&gt;46.4&lt;/vlrNominal&gt;
+          &lt;vlrLiquidado&gt;46.4&lt;/vlrLiquidado&gt;
+          &lt;dataOcorrencia&gt;2019-06-06T00:00:00-03:00&lt;/dataOcorrencia&gt;
+          &lt;ocorrencia&gt;LIQUIDADO&lt;/ocorrencia&gt;
+          &lt;codOcorrencia&gt;06&lt;/codOcorrencia&gt;
+          &lt;numParcela&gt;02&lt;/numParcela&gt;
+          &lt;motivo&gt;00&lt;/motivo&gt;
+        &lt;/titulos&gt;
+      &lt;/ns0:OutConsultaOcorrenciasTitulo&gt;
+    &lt;/ns0:consultaOcorrenciasTituloResponse&gt;
   &lt;/S:Body&gt;
 &lt;/S:Envelope&gt;
 </msg>
-<status status="PASS" endtime="20190701 13:42:02.371" starttime="20190701 13:42:02.224"></status>
+<status status="PASS" starttime="20190702 10:07:11.837" endtime="20190702 10:07:11.938"></status>
 </kw>
 <kw name="Get Last Received" library="SudsLibrary">
 <doc>Gets the XML last received.</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.372" level="INFO">${response} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Header&gt;&lt;WorkContext xmlns="http://oracle.com/weblogic/soap/workarea/"&gt;rO0ABXdqADB3ZWJsb2dpYy5hc...</msg>
-<status status="PASS" endtime="20190701 13:42:02.372" starttime="20190701 13:42:02.371"></status>
+<msg timestamp="20190702 10:07:11.939" level="INFO">${response} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Body&gt;&lt;ns0:consultaOcorrenciasTituloResponse xmlns:ns0="http://sicredi.com.br/cobranca/ws/v1/bol...</msg>
+<status status="PASS" starttime="20190702 10:07:11.939" endtime="20190702 10:07:11.939"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
@@ -149,8 +192,8 @@ Service ( UploadDocumentosVeiculosService ) tns="http://sicredi.com.br/credito/v
 <assign>
 <var>${parse_string}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.374" level="INFO">${parse_string} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Header&gt;&lt;WorkContext xmlns="http://oracle.com/weblogic/soap/workarea/"&gt;rO0ABXdqADB3ZWJsb2dpYy5hc...</msg>
-<status status="PASS" endtime="20190701 13:42:02.374" starttime="20190701 13:42:02.372"></status>
+<msg timestamp="20190702 10:07:11.942" level="INFO">${parse_string} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Body&gt;&lt;ns0:consultaOcorrenciasTituloResponse xmlns:ns0="http://sicredi.com.br/cobranca/ws/v1/bol...</msg>
+<status status="PASS" starttime="20190702 10:07:11.941" endtime="20190702 10:07:11.942"></status>
 </kw>
 <kw name="Parse Xml" library="XML">
 <doc>Parses the given XML file or string into an element structure.</doc>
@@ -160,120 +203,783 @@ Service ( UploadDocumentosVeiculosService ) tns="http://sicredi.com.br/credito/v
 <assign>
 <var>${parse_xml}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.375" level="INFO">${parse_xml} = &lt;Element 'Envelope' at 0x0000000004BFE7E0&gt;</msg>
-<status status="PASS" endtime="20190701 13:42:02.375" starttime="20190701 13:42:02.374"></status>
+<msg timestamp="20190702 10:07:11.944" level="INFO">${parse_xml} = &lt;Element 'Envelope' at 0x0000029F856A61D8&gt;</msg>
+<status status="PASS" starttime="20190702 10:07:11.943" endtime="20190702 10:07:11.944"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
 <arguments>
 <arg>${parse_xml}</arg>
-<arg>*//tiposDocumento//tipoDocumento</arg>
+<arg>*//titulos//oidMovimento</arg>
 </arguments>
 <assign>
-<var>@{document}</var>
+<var>@{lst_oidMovimento}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.376" level="INFO">@{document} = [ CRV assinado | CRV do ve\xc3\xadculo | Nota Fiscal ]</msg>
-<status status="PASS" endtime="20190701 13:42:02.376" starttime="20190701 13:42:02.375"></status>
+<msg timestamp="20190702 10:07:11.945" level="INFO">@{lst_oidMovimento} = [ 1897723790 | 1897723791 | 1897724085 | 1897724238 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.945" endtime="20190702 10:07:11.945"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//agCedente</arg>
+</arguments>
+<assign>
+<var>@{lst_agCedente}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.946" level="INFO">@{lst_agCedente} = [ 030701 | 030701 | 030701 | 030701 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.946" endtime="20190702 10:07:11.946"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//beneficiario</arg>
+</arguments>
+<assign>
+<var>@{lst_beneficiario}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.948" level="INFO">@{lst_beneficiario} = [ 58069 | 58069 | 58069 | 58069 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.947" endtime="20190702 10:07:11.948"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//nossoNumero</arg>
+</arguments>
+<assign>
+<var>@{lst_nossoNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.949" level="INFO">@{lst_nossoNumero} = [ 191001378 | 191001386 | 191001378 | 191001386 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.948" endtime="20190702 10:07:11.949"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//seuNumero</arg>
+</arguments>
+<assign>
+<var>@{lst_seuNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.949" level="INFO">@{lst_seuNumero} = [ B919326461 | B919326461 | B919326461 | B919326461 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.949" endtime="20190702 10:07:11.950"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//vlrNominal</arg>
+</arguments>
+<assign>
+<var>@{lst_vlrNominal}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.950" level="INFO">@{lst_vlrNominal} = [ 46.41 | 46.4 | 46.41 | 46.4 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.950" endtime="20190702 10:07:11.950"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//dataOcorrencia</arg>
+</arguments>
+<assign>
+<var>@{lst_dataOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.951" level="INFO">@{lst_dataOcorrencia} = [ 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.951" endtime="20190702 10:07:11.951"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//ocorrencia</arg>
+</arguments>
+<assign>
+<var>@{lst_ocorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.952" level="INFO">@{lst_ocorrencia} = [ ENTRADA_CONFIRMADA | ENTRADA_CONFIRMADA | LIQUIDADO | LIQUIDADO ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.951" endtime="20190702 10:07:11.952"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//codOcorrencia</arg>
+</arguments>
+<assign>
+<var>@{lst_codOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.952" level="INFO">@{lst_codOcorrencia} = [ 02 | 02 | 06 | 06 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.952" endtime="20190702 10:07:11.952"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//numParcela</arg>
+</arguments>
+<assign>
+<var>@{lst_numParcela}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.953" level="INFO">@{lst_numParcela} = [ 01 | 02 | 01 | 02 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.953" endtime="20190702 10:07:11.954"></status>
+</kw>
+<kw name="Get Elements Texts" library="XML">
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<arguments>
+<arg>${parse_xml}</arg>
+<arg>*//titulos//motivo</arg>
+</arguments>
+<assign>
+<var>@{lst_motivo}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.954" level="INFO">@{lst_motivo} = [ 00 | 00 | 00 | 00 ]</msg>
+<status status="PASS" starttime="20190702 10:07:11.954" endtime="20190702 10:07:11.954"></status>
 </kw>
 <kw name="Get Length" library="BuiltIn">
 <doc>Returns and logs the length of the given item as an integer.</doc>
 <arguments>
-<arg>${document}</arg>
+<arg>${lst_oidMovimento}</arg>
 </arguments>
 <assign>
-<var>${count_list_document}</var>
+<var>${lst_count}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.377" level="INFO">Length is 3</msg>
-<msg timestamp="20190701 13:42:02.377" level="INFO">${count_list_document} = 3</msg>
-<status status="PASS" endtime="20190701 13:42:02.377" starttime="20190701 13:42:02.376"></status>
+<msg timestamp="20190702 10:07:11.955" level="INFO">Length is 4</msg>
+<msg timestamp="20190702 10:07:11.955" level="INFO">${lst_count} = 4</msg>
+<status status="PASS" starttime="20190702 10:07:11.954" endtime="20190702 10:07:11.955"></status>
 </kw>
-<kw type="for" name="${count} IN RANGE [ 0 | ${count_list_document} ]">
-<kw type="foritem" name="${count} = 0">
-<kw name="Get Elements Texts" library="XML">
-<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<kw name="${count} IN RANGE [ 0 | ${lst_count} ]" type="for">
+<kw name="${count} = 0" type="foritem">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
 <arguments>
-<arg>${parse_xml}</arg>
-<arg>*//tiposDocumento//tipoDocumento[${count+1}]</arg>
+<arg>@{lst_oidMovimento}[${count}]</arg>
 </arguments>
 <assign>
-<var>${tipo_documento}</var>
+<var>${oidMovimento}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.378" level="INFO">${tipo_documento} = ['CRV assinado']</msg>
-<status status="PASS" endtime="20190701 13:42:02.378" starttime="20190701 13:42:02.377"></status>
+<msg timestamp="20190702 10:07:11.956" level="INFO">${oidMovimento} = 1897723790</msg>
+<status status="PASS" starttime="20190702 10:07:11.956" endtime="20190702 10:07:11.957"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_agCedente}[${count}]</arg>
+</arguments>
+<assign>
+<var>${agCedente}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.958" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 10:07:11.957" endtime="20190702 10:07:11.958"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_beneficiario}[${count}]</arg>
+</arguments>
+<assign>
+<var>${beneficiario}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.958" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 10:07:11.958" endtime="20190702 10:07:11.959"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_nossoNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${nossoNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.960" level="INFO">${nossoNumero} = 191001378</msg>
+<status status="PASS" starttime="20190702 10:07:11.959" endtime="20190702 10:07:11.960"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_seuNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${seuNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.961" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 10:07:11.961" endtime="20190702 10:07:11.961"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_vlrNominal}[${count}]</arg>
+</arguments>
+<assign>
+<var>${vlrNominal}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.962" level="INFO">${vlrNominal} = 46.41</msg>
+<status status="PASS" starttime="20190702 10:07:11.961" endtime="20190702 10:07:11.962"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_dataOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${dataOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.963" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 10:07:11.962" endtime="20190702 10:07:11.963"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_ocorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${ocorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.963" level="INFO">${ocorrencia} = ENTRADA_CONFIRMADA</msg>
+<status status="PASS" starttime="20190702 10:07:11.963" endtime="20190702 10:07:11.963"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_codOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${codOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.965" level="INFO">${codOcorrencia} = 02</msg>
+<status status="PASS" starttime="20190702 10:07:11.964" endtime="20190702 10:07:11.965"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_numParcela}[${count}]</arg>
+</arguments>
+<assign>
+<var>${numParcela}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.966" level="INFO">${numParcela} = 01</msg>
+<status status="PASS" starttime="20190702 10:07:11.965" endtime="20190702 10:07:11.966"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_motivo}[${count}]</arg>
+</arguments>
+<assign>
+<var>${motivo}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.967" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 10:07:11.966" endtime="20190702 10:07:11.967"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${tipo_documento}</arg>
+<arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
 </arguments>
-<msg timestamp="20190701 13:42:02.379" level="INFO">['CRV assinado']</msg>
-<status status="PASS" endtime="20190701 13:42:02.379" starttime="20190701 13:42:02.378"></status>
+<msg timestamp="20190702 10:07:11.968" level="INFO">oidMovimento: 1897723790
+agCedente:030701
+beneficiario:58069
+nossoNumero:191001378
+seuNumero:B919326461
+vlrNominal:46.41
+dataOcorrencia:2019-06-06T00:00:00-03:00
+ocorrencia:ENTRADA_CONFIRMADA
+codOcorrencia:02
+numParcela:01
+motivo:00</msg>
+<status status="PASS" starttime="20190702 10:07:11.967" endtime="20190702 10:07:11.969"></status>
 </kw>
-<status status="PASS" endtime="20190701 13:42:02.379" starttime="20190701 13:42:02.377"></status>
-</kw>
-<kw type="foritem" name="${count} = 1">
-<kw name="Get Elements Texts" library="XML">
-<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
-<arg>${parse_xml}</arg>
-<arg>*//tiposDocumento//tipoDocumento[${count+1}]</arg>
+<arg>${count}+1</arg>
 </arguments>
 <assign>
-<var>${tipo_documento}</var>
+<var>${count}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.380" level="INFO">${tipo_documento} = ['CRV do ve\\xc3\\xadculo']</msg>
-<status status="PASS" endtime="20190701 13:42:02.380" starttime="20190701 13:42:02.379"></status>
+<msg timestamp="20190702 10:07:11.969" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20190702 10:07:11.969" endtime="20190702 10:07:11.969"></status>
+</kw>
+<status status="PASS" starttime="20190702 10:07:11.955" endtime="20190702 10:07:11.970"></status>
+</kw>
+<kw name="${count} = 1" type="foritem">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_oidMovimento}[${count}]</arg>
+</arguments>
+<assign>
+<var>${oidMovimento}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.970" level="INFO">${oidMovimento} = 1897723791</msg>
+<status status="PASS" starttime="20190702 10:07:11.970" endtime="20190702 10:07:11.971"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_agCedente}[${count}]</arg>
+</arguments>
+<assign>
+<var>${agCedente}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.971" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 10:07:11.971" endtime="20190702 10:07:11.971"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_beneficiario}[${count}]</arg>
+</arguments>
+<assign>
+<var>${beneficiario}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.972" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 10:07:11.972" endtime="20190702 10:07:11.972"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_nossoNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${nossoNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.973" level="INFO">${nossoNumero} = 191001386</msg>
+<status status="PASS" starttime="20190702 10:07:11.973" endtime="20190702 10:07:11.973"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_seuNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${seuNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.974" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 10:07:11.974" endtime="20190702 10:07:11.974"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_vlrNominal}[${count}]</arg>
+</arguments>
+<assign>
+<var>${vlrNominal}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.975" level="INFO">${vlrNominal} = 46.4</msg>
+<status status="PASS" starttime="20190702 10:07:11.974" endtime="20190702 10:07:11.975"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_dataOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${dataOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.976" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 10:07:11.975" endtime="20190702 10:07:11.976"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_ocorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${ocorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.978" level="INFO">${ocorrencia} = ENTRADA_CONFIRMADA</msg>
+<status status="PASS" starttime="20190702 10:07:11.977" endtime="20190702 10:07:11.978"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_codOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${codOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.979" level="INFO">${codOcorrencia} = 02</msg>
+<status status="PASS" starttime="20190702 10:07:11.978" endtime="20190702 10:07:11.979"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_numParcela}[${count}]</arg>
+</arguments>
+<assign>
+<var>${numParcela}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.980" level="INFO">${numParcela} = 02</msg>
+<status status="PASS" starttime="20190702 10:07:11.979" endtime="20190702 10:07:11.980"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_motivo}[${count}]</arg>
+</arguments>
+<assign>
+<var>${motivo}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.981" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 10:07:11.980" endtime="20190702 10:07:11.981"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${tipo_documento}</arg>
+<arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
 </arguments>
-<msg timestamp="20190701 13:42:02.380" level="INFO">['CRV do ve\\xc3\\xadculo']</msg>
-<status status="PASS" endtime="20190701 13:42:02.380" starttime="20190701 13:42:02.380"></status>
+<msg timestamp="20190702 10:07:11.982" level="INFO">oidMovimento: 1897723791
+agCedente:030701
+beneficiario:58069
+nossoNumero:191001386
+seuNumero:B919326461
+vlrNominal:46.4
+dataOcorrencia:2019-06-06T00:00:00-03:00
+ocorrencia:ENTRADA_CONFIRMADA
+codOcorrencia:02
+numParcela:02
+motivo:00</msg>
+<status status="PASS" starttime="20190702 10:07:11.981" endtime="20190702 10:07:11.983"></status>
 </kw>
-<status status="PASS" endtime="20190701 13:42:02.381" starttime="20190701 13:42:02.379"></status>
-</kw>
-<kw type="foritem" name="${count} = 2">
-<kw name="Get Elements Texts" library="XML">
-<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
-<arg>${parse_xml}</arg>
-<arg>*//tiposDocumento//tipoDocumento[${count+1}]</arg>
+<arg>${count}+1</arg>
 </arguments>
 <assign>
-<var>${tipo_documento}</var>
+<var>${count}</var>
 </assign>
-<msg timestamp="20190701 13:42:02.382" level="INFO">${tipo_documento} = ['Nota Fiscal']</msg>
-<status status="PASS" endtime="20190701 13:42:02.382" starttime="20190701 13:42:02.381"></status>
+<msg timestamp="20190702 10:07:11.983" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20190702 10:07:11.983" endtime="20190702 10:07:11.984"></status>
+</kw>
+<status status="PASS" starttime="20190702 10:07:11.970" endtime="20190702 10:07:11.984"></status>
+</kw>
+<kw name="${count} = 2" type="foritem">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_oidMovimento}[${count}]</arg>
+</arguments>
+<assign>
+<var>${oidMovimento}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.985" level="INFO">${oidMovimento} = 1897724085</msg>
+<status status="PASS" starttime="20190702 10:07:11.984" endtime="20190702 10:07:11.985"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_agCedente}[${count}]</arg>
+</arguments>
+<assign>
+<var>${agCedente}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.985" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 10:07:11.985" endtime="20190702 10:07:11.985"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_beneficiario}[${count}]</arg>
+</arguments>
+<assign>
+<var>${beneficiario}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.986" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 10:07:11.986" endtime="20190702 10:07:11.986"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_nossoNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${nossoNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.987" level="INFO">${nossoNumero} = 191001378</msg>
+<status status="PASS" starttime="20190702 10:07:11.987" endtime="20190702 10:07:11.987"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_seuNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${seuNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.988" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 10:07:11.988" endtime="20190702 10:07:11.988"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_vlrNominal}[${count}]</arg>
+</arguments>
+<assign>
+<var>${vlrNominal}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.989" level="INFO">${vlrNominal} = 46.41</msg>
+<status status="PASS" starttime="20190702 10:07:11.988" endtime="20190702 10:07:11.989"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_dataOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${dataOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.990" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 10:07:11.989" endtime="20190702 10:07:11.990"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_ocorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${ocorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.991" level="INFO">${ocorrencia} = LIQUIDADO</msg>
+<status status="PASS" starttime="20190702 10:07:11.991" endtime="20190702 10:07:11.991"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_codOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${codOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.992" level="INFO">${codOcorrencia} = 06</msg>
+<status status="PASS" starttime="20190702 10:07:11.992" endtime="20190702 10:07:11.993"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_numParcela}[${count}]</arg>
+</arguments>
+<assign>
+<var>${numParcela}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.994" level="INFO">${numParcela} = 01</msg>
+<status status="PASS" starttime="20190702 10:07:11.993" endtime="20190702 10:07:11.994"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_motivo}[${count}]</arg>
+</arguments>
+<assign>
+<var>${motivo}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.995" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 10:07:11.994" endtime="20190702 10:07:11.995"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${tipo_documento}</arg>
+<arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
 </arguments>
-<msg timestamp="20190701 13:42:02.382" level="INFO">['Nota Fiscal']</msg>
-<status status="PASS" endtime="20190701 13:42:02.382" starttime="20190701 13:42:02.382"></status>
+<msg timestamp="20190702 10:07:11.997" level="INFO">oidMovimento: 1897724085
+agCedente:030701
+beneficiario:58069
+nossoNumero:191001378
+seuNumero:B919326461
+vlrNominal:46.41
+dataOcorrencia:2019-06-06T00:00:00-03:00
+ocorrencia:LIQUIDADO
+codOcorrencia:06
+numParcela:01
+motivo:00</msg>
+<status status="PASS" starttime="20190702 10:07:11.996" endtime="20190702 10:07:11.997"></status>
 </kw>
-<status status="PASS" endtime="20190701 13:42:02.382" starttime="20190701 13:42:02.381"></status>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${count}+1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.998" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20190702 10:07:11.997" endtime="20190702 10:07:11.998"></status>
 </kw>
-<status status="PASS" endtime="20190701 13:42:02.382" starttime="20190701 13:42:02.377"></status>
+<status status="PASS" starttime="20190702 10:07:11.984" endtime="20190702 10:07:11.998"></status>
 </kw>
-<status status="PASS" endtime="20190701 13:42:02.382" starttime="20190701 13:42:02.122"></status>
+<kw name="${count} = 3" type="foritem">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_oidMovimento}[${count}]</arg>
+</arguments>
+<assign>
+<var>${oidMovimento}</var>
+</assign>
+<msg timestamp="20190702 10:07:11.999" level="INFO">${oidMovimento} = 1897724238</msg>
+<status status="PASS" starttime="20190702 10:07:11.998" endtime="20190702 10:07:11.999"></status>
 </kw>
-<status status="PASS" endtime="20190701 13:42:02.383" critical="yes" starttime="20190701 13:42:02.121"></status>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_agCedente}[${count}]</arg>
+</arguments>
+<assign>
+<var>${agCedente}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.000" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 10:07:11.999" endtime="20190702 10:07:12.000"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_beneficiario}[${count}]</arg>
+</arguments>
+<assign>
+<var>${beneficiario}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.001" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 10:07:12.000" endtime="20190702 10:07:12.001"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_nossoNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${nossoNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.002" level="INFO">${nossoNumero} = 191001386</msg>
+<status status="PASS" starttime="20190702 10:07:12.001" endtime="20190702 10:07:12.002"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_seuNumero}[${count}]</arg>
+</arguments>
+<assign>
+<var>${seuNumero}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.003" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 10:07:12.002" endtime="20190702 10:07:12.003"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_vlrNominal}[${count}]</arg>
+</arguments>
+<assign>
+<var>${vlrNominal}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.004" level="INFO">${vlrNominal} = 46.4</msg>
+<status status="PASS" starttime="20190702 10:07:12.003" endtime="20190702 10:07:12.004"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_dataOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${dataOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.005" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 10:07:12.004" endtime="20190702 10:07:12.005"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_ocorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${ocorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.006" level="INFO">${ocorrencia} = LIQUIDADO</msg>
+<status status="PASS" starttime="20190702 10:07:12.005" endtime="20190702 10:07:12.006"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_codOcorrencia}[${count}]</arg>
+</arguments>
+<assign>
+<var>${codOcorrencia}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.007" level="INFO">${codOcorrencia} = 06</msg>
+<status status="PASS" starttime="20190702 10:07:12.006" endtime="20190702 10:07:12.008"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_numParcela}[${count}]</arg>
+</arguments>
+<assign>
+<var>${numParcela}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.008" level="INFO">${numParcela} = 02</msg>
+<status status="PASS" starttime="20190702 10:07:12.008" endtime="20190702 10:07:12.009"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{lst_motivo}[${count}]</arg>
+</arguments>
+<assign>
+<var>${motivo}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.018" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 10:07:12.009" endtime="20190702 10:07:12.018"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
+</arguments>
+<msg timestamp="20190702 10:07:12.019" level="INFO">oidMovimento: 1897724238
+agCedente:030701
+beneficiario:58069
+nossoNumero:191001386
+seuNumero:B919326461
+vlrNominal:46.4
+dataOcorrencia:2019-06-06T00:00:00-03:00
+ocorrencia:LIQUIDADO
+codOcorrencia:06
+numParcela:02
+motivo:00</msg>
+<status status="PASS" starttime="20190702 10:07:12.018" endtime="20190702 10:07:12.020"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${count}+1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20190702 10:07:12.021" level="INFO">${count} = 4</msg>
+<status status="PASS" starttime="20190702 10:07:12.020" endtime="20190702 10:07:12.022"></status>
+</kw>
+<status status="PASS" starttime="20190702 10:07:11.998" endtime="20190702 10:07:12.022"></status>
+</kw>
+<status status="PASS" starttime="20190702 10:07:11.955" endtime="20190702 10:07:12.022"></status>
+</kw>
+<status status="PASS" starttime="20190702 10:07:11.530" endtime="20190702 10:07:12.022"></status>
+</kw>
+<status status="PASS" starttime="20190702 10:07:11.529" endtime="20190702 10:07:12.022" critical="yes"></status>
 </test>
-<status status="PASS" endtime="20190701 13:42:02.386" starttime="20190701 13:42:01.864"></status>
+<status status="PASS" starttime="20190702 10:07:09.862" endtime="20190702 10:07:12.024"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="UploadDocumentTest" pass="1">UploadDocumentTest</stat>
+<stat pass="1" fail="0" id="s1" name="ConsultaOcorrenciasTituloTest">ConsultaOcorrenciasTituloTest</stat>
 </suite>
 </statistics>
 <errors>
