@@ -53,6 +53,7 @@ Busca Ocorrencias
     ${numParcela}=	Set Variable  @{lst_numParcela}[${count}]
     ${motivo}=	Set Variable  @{lst_motivo}[${count}]
 
+    Log To Console  \n-> Ocorrências:
     Log To Console  oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}
     ${count}=  Evaluate  ${count}+1
   END

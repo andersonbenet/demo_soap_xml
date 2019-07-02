@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20190702 10:07:09.852" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20190702 11:40:16.142" rpa="false">
 <suite id="s1" name="ConsultaOcorrenciasTituloTest" source="C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\test\ConsultaOcorrenciasTituloTest.robot">
 <test id="s1-t1" name="TC 001: Buscar Ocorrências Título">
 <kw name="Busca Ocorrencias" library="ConsultaOcorrenciasTituloResource">
@@ -11,15 +11,15 @@
 <assign>
 <var>${ag_emissora}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.532" level="INFO">${ag_emissora} = 0307</msg>
-<status status="PASS" starttime="20190702 10:07:11.531" endtime="20190702 10:07:11.532"></status>
+<msg timestamp="20190702 11:40:16.625" level="INFO">${ag_emissora} = 0307</msg>
+<status status="PASS" starttime="20190702 11:40:16.625" endtime="20190702 11:40:16.625"></status>
 </kw>
 <kw name="Create Soap Client" library="SudsLibrary">
 <doc>Loads a WSDL from the given URL/path and creates a Suds SOAP client.</doc>
 <arguments>
 <arg>${wsdl_url}</arg>
 </arguments>
-<msg timestamp="20190702 10:07:11.833" level="INFO">Using WSDL at http://ws-cobranca12c2.hom.sicredi.net:80/ConsultasBean/ConsultasService?wsdl
+<msg timestamp="20190702 11:40:16.786" level="INFO">Using WSDL at http://ws-cobranca12c2.hom.sicredi.net:80/ConsultasBean/ConsultasService?wsdl
 Suds ( https://fedorahosted.org/suds/ )  version: 0.6
 
 Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas/"
@@ -50,7 +50,7 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
             ns0:tipoErro
 
 </msg>
-<status status="PASS" starttime="20190702 10:07:11.532" endtime="20190702 10:07:11.833"></status>
+<status status="PASS" starttime="20190702 11:40:16.625" endtime="20190702 11:40:16.787"></status>
 </kw>
 <kw name="Get File" library="OperatingSystem">
 <doc>Returns the contents of a specified file.</doc>
@@ -60,14 +60,14 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${request}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.834" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\consulta_ocorrencias_titulo.xml"&gt;C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\consulta_ocorrencias_titulo.xml&lt;/a&gt;'.</msg>
-<msg timestamp="20190702 10:07:11.836" level="INFO">${request} = &lt;soapenv:Envelope
+<msg timestamp="20190702 11:40:16.788" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\consulta_ocorrencias_titulo.xml"&gt;C:\Users\anderson_benet\Documents\git_robotframework\demo_soap_xml\resource\xml\consulta_ocorrencias_titulo.xml&lt;/a&gt;'.</msg>
+<msg timestamp="20190702 11:40:16.790" level="INFO">${request} = &lt;soapenv:Envelope
 	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 	xmlns:bol="http://sicredi.com.br/cobranca/ws/v1/boleto/"&gt;
 	&lt;soapenv:Header/&gt;
 	&lt;soapenv:Body&gt;
 		&lt;bol:consultaOcorrenciasTit...</msg>
-<status status="PASS" starttime="20190702 10:07:11.834" endtime="20190702 10:07:11.836"></status>
+<status status="PASS" starttime="20190702 11:40:16.787" endtime="20190702 11:40:16.790"></status>
 </kw>
 <kw name="Create Raw Soap Message" library="SudsLibrary">
 <doc>Returns an object that can used in lieu of SOAP method arguments.</doc>
@@ -77,13 +77,13 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${request}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.836" level="INFO">${request} = &lt;soapenv:Envelope
+<msg timestamp="20190702 11:40:16.792" level="INFO">${request} = &lt;soapenv:Envelope
 	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 	xmlns:bol="http://sicredi.com.br/cobranca/ws/v1/boleto/"&gt;
 	&lt;soapenv:Header/&gt;
 	&lt;soapenv:Body&gt;
 		&lt;bol:consultaOcorrenciasTit...</msg>
-<status status="PASS" starttime="20190702 10:07:11.836" endtime="20190702 10:07:11.836"></status>
+<status status="PASS" starttime="20190702 11:40:16.791" endtime="20190702 11:40:16.792"></status>
 </kw>
 <kw name="Call Soap Method" library="SudsLibrary">
 <doc>Calls the SOAP method with the given `name` and `args`.</doc>
@@ -91,7 +91,7 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <arg>consultaOcorrenciasTitulo</arg>
 <arg>${request}</arg>
 </arguments>
-<msg timestamp="20190702 10:07:11.861" level="INFO">Sending:
+<msg timestamp="20190702 11:40:16.798" level="INFO">Sending:
 &lt;?xml version="1.0" ?&gt;
 &lt;soapenv:Envelope xmlns:bol="http://sicredi.com.br/cobranca/ws/v1/boleto/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;soapenv:Header/&gt;
@@ -109,7 +109,7 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
   &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
 </msg>
-<msg timestamp="20190702 10:07:11.924" level="INFO">Received:
+<msg timestamp="20190702 11:40:16.853" level="INFO">Received:
 &lt;?xml version="1.0" ?&gt;
 &lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;S:Body&gt;
@@ -174,15 +174,15 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
   &lt;/S:Body&gt;
 &lt;/S:Envelope&gt;
 </msg>
-<status status="PASS" starttime="20190702 10:07:11.837" endtime="20190702 10:07:11.938"></status>
+<status status="PASS" starttime="20190702 11:40:16.792" endtime="20190702 11:40:16.864"></status>
 </kw>
 <kw name="Get Last Received" library="SudsLibrary">
 <doc>Gets the XML last received.</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.939" level="INFO">${response} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Body&gt;&lt;ns0:consultaOcorrenciasTituloResponse xmlns:ns0="http://sicredi.com.br/cobranca/ws/v1/bol...</msg>
-<status status="PASS" starttime="20190702 10:07:11.939" endtime="20190702 10:07:11.939"></status>
+<msg timestamp="20190702 11:40:16.864" level="INFO">${response} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Body&gt;&lt;ns0:consultaOcorrenciasTituloResponse xmlns:ns0="http://sicredi.com.br/cobranca/ws/v1/bol...</msg>
+<status status="PASS" starttime="20190702 11:40:16.864" endtime="20190702 11:40:16.864"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
@@ -192,8 +192,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${parse_string}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.942" level="INFO">${parse_string} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Body&gt;&lt;ns0:consultaOcorrenciasTituloResponse xmlns:ns0="http://sicredi.com.br/cobranca/ws/v1/bol...</msg>
-<status status="PASS" starttime="20190702 10:07:11.941" endtime="20190702 10:07:11.942"></status>
+<msg timestamp="20190702 11:40:16.865" level="INFO">${parse_string} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;S:Body&gt;&lt;ns0:consultaOcorrenciasTituloResponse xmlns:ns0="http://sicredi.com.br/cobranca/ws/v1/bol...</msg>
+<status status="PASS" starttime="20190702 11:40:16.864" endtime="20190702 11:40:16.865"></status>
 </kw>
 <kw name="Parse Xml" library="XML">
 <doc>Parses the given XML file or string into an element structure.</doc>
@@ -203,8 +203,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${parse_xml}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.944" level="INFO">${parse_xml} = &lt;Element 'Envelope' at 0x0000029F856A61D8&gt;</msg>
-<status status="PASS" starttime="20190702 10:07:11.943" endtime="20190702 10:07:11.944"></status>
+<msg timestamp="20190702 11:40:16.865" level="INFO">${parse_xml} = &lt;Element 'Envelope' at 0x00000295220D61D8&gt;</msg>
+<status status="PASS" starttime="20190702 11:40:16.865" endtime="20190702 11:40:16.865"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -215,8 +215,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_oidMovimento}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.945" level="INFO">@{lst_oidMovimento} = [ 1897723790 | 1897723791 | 1897724085 | 1897724238 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.945" endtime="20190702 10:07:11.945"></status>
+<msg timestamp="20190702 11:40:16.866" level="INFO">@{lst_oidMovimento} = [ 1897723790 | 1897723791 | 1897724085 | 1897724238 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.866" endtime="20190702 11:40:16.866"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -227,8 +227,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_agCedente}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.946" level="INFO">@{lst_agCedente} = [ 030701 | 030701 | 030701 | 030701 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.946" endtime="20190702 10:07:11.946"></status>
+<msg timestamp="20190702 11:40:16.867" level="INFO">@{lst_agCedente} = [ 030701 | 030701 | 030701 | 030701 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.866" endtime="20190702 11:40:16.867"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -239,8 +239,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_beneficiario}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.948" level="INFO">@{lst_beneficiario} = [ 58069 | 58069 | 58069 | 58069 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.947" endtime="20190702 10:07:11.948"></status>
+<msg timestamp="20190702 11:40:16.869" level="INFO">@{lst_beneficiario} = [ 58069 | 58069 | 58069 | 58069 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.868" endtime="20190702 11:40:16.869"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -251,8 +251,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_nossoNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.949" level="INFO">@{lst_nossoNumero} = [ 191001378 | 191001386 | 191001378 | 191001386 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.948" endtime="20190702 10:07:11.949"></status>
+<msg timestamp="20190702 11:40:16.870" level="INFO">@{lst_nossoNumero} = [ 191001378 | 191001386 | 191001378 | 191001386 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.869" endtime="20190702 11:40:16.870"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -263,8 +263,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_seuNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.949" level="INFO">@{lst_seuNumero} = [ B919326461 | B919326461 | B919326461 | B919326461 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.949" endtime="20190702 10:07:11.950"></status>
+<msg timestamp="20190702 11:40:16.871" level="INFO">@{lst_seuNumero} = [ B919326461 | B919326461 | B919326461 | B919326461 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.870" endtime="20190702 11:40:16.871"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -275,8 +275,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_vlrNominal}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.950" level="INFO">@{lst_vlrNominal} = [ 46.41 | 46.4 | 46.41 | 46.4 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.950" endtime="20190702 10:07:11.950"></status>
+<msg timestamp="20190702 11:40:16.872" level="INFO">@{lst_vlrNominal} = [ 46.41 | 46.4 | 46.41 | 46.4 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.871" endtime="20190702 11:40:16.872"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -287,8 +287,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_dataOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.951" level="INFO">@{lst_dataOcorrencia} = [ 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.951" endtime="20190702 10:07:11.951"></status>
+<msg timestamp="20190702 11:40:16.874" level="INFO">@{lst_dataOcorrencia} = [ 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 | 2019-06-06T00:00:00-03:00 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.873" endtime="20190702 11:40:16.874"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -299,8 +299,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_ocorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.952" level="INFO">@{lst_ocorrencia} = [ ENTRADA_CONFIRMADA | ENTRADA_CONFIRMADA | LIQUIDADO | LIQUIDADO ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.951" endtime="20190702 10:07:11.952"></status>
+<msg timestamp="20190702 11:40:16.875" level="INFO">@{lst_ocorrencia} = [ ENTRADA_CONFIRMADA | ENTRADA_CONFIRMADA | LIQUIDADO | LIQUIDADO ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.874" endtime="20190702 11:40:16.875"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -311,8 +311,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_codOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.952" level="INFO">@{lst_codOcorrencia} = [ 02 | 02 | 06 | 06 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.952" endtime="20190702 10:07:11.952"></status>
+<msg timestamp="20190702 11:40:16.877" level="INFO">@{lst_codOcorrencia} = [ 02 | 02 | 06 | 06 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.875" endtime="20190702 11:40:16.877"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -323,8 +323,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_numParcela}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.953" level="INFO">@{lst_numParcela} = [ 01 | 02 | 01 | 02 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.953" endtime="20190702 10:07:11.954"></status>
+<msg timestamp="20190702 11:40:16.878" level="INFO">@{lst_numParcela} = [ 01 | 02 | 01 | 02 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.877" endtime="20190702 11:40:16.878"></status>
 </kw>
 <kw name="Get Elements Texts" library="XML">
 <doc>Returns text of all elements matching ``xpath`` as a list.</doc>
@@ -335,8 +335,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>@{lst_motivo}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.954" level="INFO">@{lst_motivo} = [ 00 | 00 | 00 | 00 ]</msg>
-<status status="PASS" starttime="20190702 10:07:11.954" endtime="20190702 10:07:11.954"></status>
+<msg timestamp="20190702 11:40:16.878" level="INFO">@{lst_motivo} = [ 00 | 00 | 00 | 00 ]</msg>
+<status status="PASS" starttime="20190702 11:40:16.878" endtime="20190702 11:40:16.878"></status>
 </kw>
 <kw name="Get Length" library="BuiltIn">
 <doc>Returns and logs the length of the given item as an integer.</doc>
@@ -346,9 +346,9 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${lst_count}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.955" level="INFO">Length is 4</msg>
-<msg timestamp="20190702 10:07:11.955" level="INFO">${lst_count} = 4</msg>
-<status status="PASS" starttime="20190702 10:07:11.954" endtime="20190702 10:07:11.955"></status>
+<msg timestamp="20190702 11:40:16.879" level="INFO">Length is 4</msg>
+<msg timestamp="20190702 11:40:16.879" level="INFO">${lst_count} = 4</msg>
+<status status="PASS" starttime="20190702 11:40:16.879" endtime="20190702 11:40:16.879"></status>
 </kw>
 <kw name="${count} IN RANGE [ 0 | ${lst_count} ]" type="for">
 <kw name="${count} = 0" type="foritem">
@@ -360,8 +360,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${oidMovimento}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.956" level="INFO">${oidMovimento} = 1897723790</msg>
-<status status="PASS" starttime="20190702 10:07:11.956" endtime="20190702 10:07:11.957"></status>
+<msg timestamp="20190702 11:40:16.881" level="INFO">${oidMovimento} = 1897723790</msg>
+<status status="PASS" starttime="20190702 11:40:16.880" endtime="20190702 11:40:16.881"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -371,8 +371,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${agCedente}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.958" level="INFO">${agCedente} = 030701</msg>
-<status status="PASS" starttime="20190702 10:07:11.957" endtime="20190702 10:07:11.958"></status>
+<msg timestamp="20190702 11:40:16.882" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 11:40:16.881" endtime="20190702 11:40:16.882"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -382,8 +382,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${beneficiario}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.958" level="INFO">${beneficiario} = 58069</msg>
-<status status="PASS" starttime="20190702 10:07:11.958" endtime="20190702 10:07:11.959"></status>
+<msg timestamp="20190702 11:40:16.883" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 11:40:16.883" endtime="20190702 11:40:16.884"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -393,8 +393,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${nossoNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.960" level="INFO">${nossoNumero} = 191001378</msg>
-<status status="PASS" starttime="20190702 10:07:11.959" endtime="20190702 10:07:11.960"></status>
+<msg timestamp="20190702 11:40:16.885" level="INFO">${nossoNumero} = 191001378</msg>
+<status status="PASS" starttime="20190702 11:40:16.884" endtime="20190702 11:40:16.885"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -404,8 +404,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${seuNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.961" level="INFO">${seuNumero} = B919326461</msg>
-<status status="PASS" starttime="20190702 10:07:11.961" endtime="20190702 10:07:11.961"></status>
+<msg timestamp="20190702 11:40:16.886" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 11:40:16.885" endtime="20190702 11:40:16.886"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -415,8 +415,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${vlrNominal}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.962" level="INFO">${vlrNominal} = 46.41</msg>
-<status status="PASS" starttime="20190702 10:07:11.961" endtime="20190702 10:07:11.962"></status>
+<msg timestamp="20190702 11:40:16.887" level="INFO">${vlrNominal} = 46.41</msg>
+<status status="PASS" starttime="20190702 11:40:16.887" endtime="20190702 11:40:16.887"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -426,8 +426,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${dataOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.963" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
-<status status="PASS" starttime="20190702 10:07:11.962" endtime="20190702 10:07:11.963"></status>
+<msg timestamp="20190702 11:40:16.888" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 11:40:16.888" endtime="20190702 11:40:16.889"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -437,8 +437,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${ocorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.963" level="INFO">${ocorrencia} = ENTRADA_CONFIRMADA</msg>
-<status status="PASS" starttime="20190702 10:07:11.963" endtime="20190702 10:07:11.963"></status>
+<msg timestamp="20190702 11:40:16.889" level="INFO">${ocorrencia} = ENTRADA_CONFIRMADA</msg>
+<status status="PASS" starttime="20190702 11:40:16.889" endtime="20190702 11:40:16.889"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -448,8 +448,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${codOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.965" level="INFO">${codOcorrencia} = 02</msg>
-<status status="PASS" starttime="20190702 10:07:11.964" endtime="20190702 10:07:11.965"></status>
+<msg timestamp="20190702 11:40:16.890" level="INFO">${codOcorrencia} = 02</msg>
+<status status="PASS" starttime="20190702 11:40:16.889" endtime="20190702 11:40:16.890"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -459,8 +459,8 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${numParcela}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.966" level="INFO">${numParcela} = 01</msg>
-<status status="PASS" starttime="20190702 10:07:11.965" endtime="20190702 10:07:11.966"></status>
+<msg timestamp="20190702 11:40:16.891" level="INFO">${numParcela} = 01</msg>
+<status status="PASS" starttime="20190702 11:40:16.890" endtime="20190702 11:40:16.891"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -470,26 +470,15 @@ Service ( ConsultasService ) tns="http://sicredi.com.br/cobranca/ws/v1/consultas
 <assign>
 <var>${motivo}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.967" level="INFO">${motivo} = 00</msg>
-<status status="PASS" starttime="20190702 10:07:11.966" endtime="20190702 10:07:11.967"></status>
+<msg timestamp="20190702 11:40:16.891" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 11:40:16.891" endtime="20190702 11:40:16.891"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
 </arguments>
-<msg timestamp="20190702 10:07:11.968" level="INFO">oidMovimento: 1897723790
-agCedente:030701
-beneficiario:58069
-nossoNumero:191001378
-seuNumero:B919326461
-vlrNominal:46.41
-dataOcorrencia:2019-06-06T00:00:00-03:00
-ocorrencia:ENTRADA_CONFIRMADA
-codOcorrencia:02
-numParcela:01
-motivo:00</msg>
-<status status="PASS" starttime="20190702 10:07:11.967" endtime="20190702 10:07:11.969"></status>
+<status status="PASS" starttime="20190702 11:40:16.892" endtime="20190702 11:40:16.893"></status>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
@@ -499,10 +488,10 @@ motivo:00</msg>
 <assign>
 <var>${count}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.969" level="INFO">${count} = 1</msg>
-<status status="PASS" starttime="20190702 10:07:11.969" endtime="20190702 10:07:11.969"></status>
+<msg timestamp="20190702 11:40:16.893" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20190702 11:40:16.893" endtime="20190702 11:40:16.893"></status>
 </kw>
-<status status="PASS" starttime="20190702 10:07:11.955" endtime="20190702 10:07:11.970"></status>
+<status status="PASS" starttime="20190702 11:40:16.880" endtime="20190702 11:40:16.893"></status>
 </kw>
 <kw name="${count} = 1" type="foritem">
 <kw name="Set Variable" library="BuiltIn">
@@ -513,8 +502,8 @@ motivo:00</msg>
 <assign>
 <var>${oidMovimento}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.970" level="INFO">${oidMovimento} = 1897723791</msg>
-<status status="PASS" starttime="20190702 10:07:11.970" endtime="20190702 10:07:11.971"></status>
+<msg timestamp="20190702 11:40:16.894" level="INFO">${oidMovimento} = 1897723791</msg>
+<status status="PASS" starttime="20190702 11:40:16.894" endtime="20190702 11:40:16.894"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -524,8 +513,8 @@ motivo:00</msg>
 <assign>
 <var>${agCedente}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.971" level="INFO">${agCedente} = 030701</msg>
-<status status="PASS" starttime="20190702 10:07:11.971" endtime="20190702 10:07:11.971"></status>
+<msg timestamp="20190702 11:40:16.895" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 11:40:16.895" endtime="20190702 11:40:16.895"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -535,8 +524,8 @@ motivo:00</msg>
 <assign>
 <var>${beneficiario}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.972" level="INFO">${beneficiario} = 58069</msg>
-<status status="PASS" starttime="20190702 10:07:11.972" endtime="20190702 10:07:11.972"></status>
+<msg timestamp="20190702 11:40:16.896" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 11:40:16.896" endtime="20190702 11:40:16.896"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -546,8 +535,8 @@ motivo:00</msg>
 <assign>
 <var>${nossoNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.973" level="INFO">${nossoNumero} = 191001386</msg>
-<status status="PASS" starttime="20190702 10:07:11.973" endtime="20190702 10:07:11.973"></status>
+<msg timestamp="20190702 11:40:16.897" level="INFO">${nossoNumero} = 191001386</msg>
+<status status="PASS" starttime="20190702 11:40:16.896" endtime="20190702 11:40:16.897"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -557,8 +546,8 @@ motivo:00</msg>
 <assign>
 <var>${seuNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.974" level="INFO">${seuNumero} = B919326461</msg>
-<status status="PASS" starttime="20190702 10:07:11.974" endtime="20190702 10:07:11.974"></status>
+<msg timestamp="20190702 11:40:16.898" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 11:40:16.897" endtime="20190702 11:40:16.898"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -568,8 +557,8 @@ motivo:00</msg>
 <assign>
 <var>${vlrNominal}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.975" level="INFO">${vlrNominal} = 46.4</msg>
-<status status="PASS" starttime="20190702 10:07:11.974" endtime="20190702 10:07:11.975"></status>
+<msg timestamp="20190702 11:40:16.899" level="INFO">${vlrNominal} = 46.4</msg>
+<status status="PASS" starttime="20190702 11:40:16.898" endtime="20190702 11:40:16.899"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -579,8 +568,8 @@ motivo:00</msg>
 <assign>
 <var>${dataOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.976" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
-<status status="PASS" starttime="20190702 10:07:11.975" endtime="20190702 10:07:11.976"></status>
+<msg timestamp="20190702 11:40:16.901" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 11:40:16.899" endtime="20190702 11:40:16.901"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -590,8 +579,8 @@ motivo:00</msg>
 <assign>
 <var>${ocorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.978" level="INFO">${ocorrencia} = ENTRADA_CONFIRMADA</msg>
-<status status="PASS" starttime="20190702 10:07:11.977" endtime="20190702 10:07:11.978"></status>
+<msg timestamp="20190702 11:40:16.903" level="INFO">${ocorrencia} = ENTRADA_CONFIRMADA</msg>
+<status status="PASS" starttime="20190702 11:40:16.901" endtime="20190702 11:40:16.903"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -601,8 +590,8 @@ motivo:00</msg>
 <assign>
 <var>${codOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.979" level="INFO">${codOcorrencia} = 02</msg>
-<status status="PASS" starttime="20190702 10:07:11.978" endtime="20190702 10:07:11.979"></status>
+<msg timestamp="20190702 11:40:16.904" level="INFO">${codOcorrencia} = 02</msg>
+<status status="PASS" starttime="20190702 11:40:16.903" endtime="20190702 11:40:16.904"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -612,8 +601,8 @@ motivo:00</msg>
 <assign>
 <var>${numParcela}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.980" level="INFO">${numParcela} = 02</msg>
-<status status="PASS" starttime="20190702 10:07:11.979" endtime="20190702 10:07:11.980"></status>
+<msg timestamp="20190702 11:40:16.905" level="INFO">${numParcela} = 02</msg>
+<status status="PASS" starttime="20190702 11:40:16.904" endtime="20190702 11:40:16.905"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -623,26 +612,15 @@ motivo:00</msg>
 <assign>
 <var>${motivo}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.981" level="INFO">${motivo} = 00</msg>
-<status status="PASS" starttime="20190702 10:07:11.980" endtime="20190702 10:07:11.981"></status>
+<msg timestamp="20190702 11:40:16.906" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 11:40:16.905" endtime="20190702 11:40:16.906"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
 </arguments>
-<msg timestamp="20190702 10:07:11.982" level="INFO">oidMovimento: 1897723791
-agCedente:030701
-beneficiario:58069
-nossoNumero:191001386
-seuNumero:B919326461
-vlrNominal:46.4
-dataOcorrencia:2019-06-06T00:00:00-03:00
-ocorrencia:ENTRADA_CONFIRMADA
-codOcorrencia:02
-numParcela:02
-motivo:00</msg>
-<status status="PASS" starttime="20190702 10:07:11.981" endtime="20190702 10:07:11.983"></status>
+<status status="PASS" starttime="20190702 11:40:16.907" endtime="20190702 11:40:16.908"></status>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
@@ -652,10 +630,10 @@ motivo:00</msg>
 <assign>
 <var>${count}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.983" level="INFO">${count} = 2</msg>
-<status status="PASS" starttime="20190702 10:07:11.983" endtime="20190702 10:07:11.984"></status>
+<msg timestamp="20190702 11:40:16.909" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20190702 11:40:16.909" endtime="20190702 11:40:16.909"></status>
 </kw>
-<status status="PASS" starttime="20190702 10:07:11.970" endtime="20190702 10:07:11.984"></status>
+<status status="PASS" starttime="20190702 11:40:16.893" endtime="20190702 11:40:16.909"></status>
 </kw>
 <kw name="${count} = 2" type="foritem">
 <kw name="Set Variable" library="BuiltIn">
@@ -666,8 +644,8 @@ motivo:00</msg>
 <assign>
 <var>${oidMovimento}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.985" level="INFO">${oidMovimento} = 1897724085</msg>
-<status status="PASS" starttime="20190702 10:07:11.984" endtime="20190702 10:07:11.985"></status>
+<msg timestamp="20190702 11:40:16.910" level="INFO">${oidMovimento} = 1897724085</msg>
+<status status="PASS" starttime="20190702 11:40:16.910" endtime="20190702 11:40:16.910"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -677,8 +655,8 @@ motivo:00</msg>
 <assign>
 <var>${agCedente}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.985" level="INFO">${agCedente} = 030701</msg>
-<status status="PASS" starttime="20190702 10:07:11.985" endtime="20190702 10:07:11.985"></status>
+<msg timestamp="20190702 11:40:16.911" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 11:40:16.911" endtime="20190702 11:40:16.911"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -688,8 +666,8 @@ motivo:00</msg>
 <assign>
 <var>${beneficiario}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.986" level="INFO">${beneficiario} = 58069</msg>
-<status status="PASS" starttime="20190702 10:07:11.986" endtime="20190702 10:07:11.986"></status>
+<msg timestamp="20190702 11:40:16.912" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 11:40:16.912" endtime="20190702 11:40:16.912"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -699,8 +677,8 @@ motivo:00</msg>
 <assign>
 <var>${nossoNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.987" level="INFO">${nossoNumero} = 191001378</msg>
-<status status="PASS" starttime="20190702 10:07:11.987" endtime="20190702 10:07:11.987"></status>
+<msg timestamp="20190702 11:40:16.913" level="INFO">${nossoNumero} = 191001378</msg>
+<status status="PASS" starttime="20190702 11:40:16.913" endtime="20190702 11:40:16.913"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -710,8 +688,8 @@ motivo:00</msg>
 <assign>
 <var>${seuNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.988" level="INFO">${seuNumero} = B919326461</msg>
-<status status="PASS" starttime="20190702 10:07:11.988" endtime="20190702 10:07:11.988"></status>
+<msg timestamp="20190702 11:40:16.914" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 11:40:16.914" endtime="20190702 11:40:16.915"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -721,8 +699,8 @@ motivo:00</msg>
 <assign>
 <var>${vlrNominal}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.989" level="INFO">${vlrNominal} = 46.41</msg>
-<status status="PASS" starttime="20190702 10:07:11.988" endtime="20190702 10:07:11.989"></status>
+<msg timestamp="20190702 11:40:16.916" level="INFO">${vlrNominal} = 46.41</msg>
+<status status="PASS" starttime="20190702 11:40:16.915" endtime="20190702 11:40:16.916"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -732,8 +710,8 @@ motivo:00</msg>
 <assign>
 <var>${dataOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.990" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
-<status status="PASS" starttime="20190702 10:07:11.989" endtime="20190702 10:07:11.990"></status>
+<msg timestamp="20190702 11:40:16.917" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 11:40:16.916" endtime="20190702 11:40:16.917"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -743,8 +721,8 @@ motivo:00</msg>
 <assign>
 <var>${ocorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.991" level="INFO">${ocorrencia} = LIQUIDADO</msg>
-<status status="PASS" starttime="20190702 10:07:11.991" endtime="20190702 10:07:11.991"></status>
+<msg timestamp="20190702 11:40:16.918" level="INFO">${ocorrencia} = LIQUIDADO</msg>
+<status status="PASS" starttime="20190702 11:40:16.917" endtime="20190702 11:40:16.918"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -754,8 +732,8 @@ motivo:00</msg>
 <assign>
 <var>${codOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.992" level="INFO">${codOcorrencia} = 06</msg>
-<status status="PASS" starttime="20190702 10:07:11.992" endtime="20190702 10:07:11.993"></status>
+<msg timestamp="20190702 11:40:16.919" level="INFO">${codOcorrencia} = 06</msg>
+<status status="PASS" starttime="20190702 11:40:16.919" endtime="20190702 11:40:16.919"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -765,8 +743,8 @@ motivo:00</msg>
 <assign>
 <var>${numParcela}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.994" level="INFO">${numParcela} = 01</msg>
-<status status="PASS" starttime="20190702 10:07:11.993" endtime="20190702 10:07:11.994"></status>
+<msg timestamp="20190702 11:40:16.921" level="INFO">${numParcela} = 01</msg>
+<status status="PASS" starttime="20190702 11:40:16.920" endtime="20190702 11:40:16.921"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -776,26 +754,15 @@ motivo:00</msg>
 <assign>
 <var>${motivo}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.995" level="INFO">${motivo} = 00</msg>
-<status status="PASS" starttime="20190702 10:07:11.994" endtime="20190702 10:07:11.995"></status>
+<msg timestamp="20190702 11:40:16.922" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 11:40:16.921" endtime="20190702 11:40:16.922"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
 </arguments>
-<msg timestamp="20190702 10:07:11.997" level="INFO">oidMovimento: 1897724085
-agCedente:030701
-beneficiario:58069
-nossoNumero:191001378
-seuNumero:B919326461
-vlrNominal:46.41
-dataOcorrencia:2019-06-06T00:00:00-03:00
-ocorrencia:LIQUIDADO
-codOcorrencia:06
-numParcela:01
-motivo:00</msg>
-<status status="PASS" starttime="20190702 10:07:11.996" endtime="20190702 10:07:11.997"></status>
+<status status="PASS" starttime="20190702 11:40:16.922" endtime="20190702 11:40:16.924"></status>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
@@ -805,10 +772,10 @@ motivo:00</msg>
 <assign>
 <var>${count}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.998" level="INFO">${count} = 3</msg>
-<status status="PASS" starttime="20190702 10:07:11.997" endtime="20190702 10:07:11.998"></status>
+<msg timestamp="20190702 11:40:16.927" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20190702 11:40:16.924" endtime="20190702 11:40:16.927"></status>
 </kw>
-<status status="PASS" starttime="20190702 10:07:11.984" endtime="20190702 10:07:11.998"></status>
+<status status="PASS" starttime="20190702 11:40:16.909" endtime="20190702 11:40:16.927"></status>
 </kw>
 <kw name="${count} = 3" type="foritem">
 <kw name="Set Variable" library="BuiltIn">
@@ -819,8 +786,8 @@ motivo:00</msg>
 <assign>
 <var>${oidMovimento}</var>
 </assign>
-<msg timestamp="20190702 10:07:11.999" level="INFO">${oidMovimento} = 1897724238</msg>
-<status status="PASS" starttime="20190702 10:07:11.998" endtime="20190702 10:07:11.999"></status>
+<msg timestamp="20190702 11:40:16.928" level="INFO">${oidMovimento} = 1897724238</msg>
+<status status="PASS" starttime="20190702 11:40:16.927" endtime="20190702 11:40:16.928"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -830,8 +797,8 @@ motivo:00</msg>
 <assign>
 <var>${agCedente}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.000" level="INFO">${agCedente} = 030701</msg>
-<status status="PASS" starttime="20190702 10:07:11.999" endtime="20190702 10:07:12.000"></status>
+<msg timestamp="20190702 11:40:16.928" level="INFO">${agCedente} = 030701</msg>
+<status status="PASS" starttime="20190702 11:40:16.928" endtime="20190702 11:40:16.928"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -841,8 +808,8 @@ motivo:00</msg>
 <assign>
 <var>${beneficiario}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.001" level="INFO">${beneficiario} = 58069</msg>
-<status status="PASS" starttime="20190702 10:07:12.000" endtime="20190702 10:07:12.001"></status>
+<msg timestamp="20190702 11:40:16.929" level="INFO">${beneficiario} = 58069</msg>
+<status status="PASS" starttime="20190702 11:40:16.928" endtime="20190702 11:40:16.929"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -852,8 +819,8 @@ motivo:00</msg>
 <assign>
 <var>${nossoNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.002" level="INFO">${nossoNumero} = 191001386</msg>
-<status status="PASS" starttime="20190702 10:07:12.001" endtime="20190702 10:07:12.002"></status>
+<msg timestamp="20190702 11:40:16.930" level="INFO">${nossoNumero} = 191001386</msg>
+<status status="PASS" starttime="20190702 11:40:16.929" endtime="20190702 11:40:16.930"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -863,8 +830,8 @@ motivo:00</msg>
 <assign>
 <var>${seuNumero}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.003" level="INFO">${seuNumero} = B919326461</msg>
-<status status="PASS" starttime="20190702 10:07:12.002" endtime="20190702 10:07:12.003"></status>
+<msg timestamp="20190702 11:40:16.931" level="INFO">${seuNumero} = B919326461</msg>
+<status status="PASS" starttime="20190702 11:40:16.930" endtime="20190702 11:40:16.931"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -874,8 +841,8 @@ motivo:00</msg>
 <assign>
 <var>${vlrNominal}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.004" level="INFO">${vlrNominal} = 46.4</msg>
-<status status="PASS" starttime="20190702 10:07:12.003" endtime="20190702 10:07:12.004"></status>
+<msg timestamp="20190702 11:40:16.931" level="INFO">${vlrNominal} = 46.4</msg>
+<status status="PASS" starttime="20190702 11:40:16.931" endtime="20190702 11:40:16.931"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -885,8 +852,8 @@ motivo:00</msg>
 <assign>
 <var>${dataOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.005" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
-<status status="PASS" starttime="20190702 10:07:12.004" endtime="20190702 10:07:12.005"></status>
+<msg timestamp="20190702 11:40:16.932" level="INFO">${dataOcorrencia} = 2019-06-06T00:00:00-03:00</msg>
+<status status="PASS" starttime="20190702 11:40:16.931" endtime="20190702 11:40:16.932"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -896,8 +863,8 @@ motivo:00</msg>
 <assign>
 <var>${ocorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.006" level="INFO">${ocorrencia} = LIQUIDADO</msg>
-<status status="PASS" starttime="20190702 10:07:12.005" endtime="20190702 10:07:12.006"></status>
+<msg timestamp="20190702 11:40:16.933" level="INFO">${ocorrencia} = LIQUIDADO</msg>
+<status status="PASS" starttime="20190702 11:40:16.932" endtime="20190702 11:40:16.933"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -907,8 +874,8 @@ motivo:00</msg>
 <assign>
 <var>${codOcorrencia}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.007" level="INFO">${codOcorrencia} = 06</msg>
-<status status="PASS" starttime="20190702 10:07:12.006" endtime="20190702 10:07:12.008"></status>
+<msg timestamp="20190702 11:40:16.934" level="INFO">${codOcorrencia} = 06</msg>
+<status status="PASS" starttime="20190702 11:40:16.933" endtime="20190702 11:40:16.934"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -918,8 +885,8 @@ motivo:00</msg>
 <assign>
 <var>${numParcela}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.008" level="INFO">${numParcela} = 02</msg>
-<status status="PASS" starttime="20190702 10:07:12.008" endtime="20190702 10:07:12.009"></status>
+<msg timestamp="20190702 11:40:16.934" level="INFO">${numParcela} = 02</msg>
+<status status="PASS" starttime="20190702 11:40:16.934" endtime="20190702 11:40:16.934"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -929,26 +896,15 @@ motivo:00</msg>
 <assign>
 <var>${motivo}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.018" level="INFO">${motivo} = 00</msg>
-<status status="PASS" starttime="20190702 10:07:12.009" endtime="20190702 10:07:12.018"></status>
+<msg timestamp="20190702 11:40:16.935" level="INFO">${motivo} = 00</msg>
+<status status="PASS" starttime="20190702 11:40:16.935" endtime="20190702 11:40:16.935"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>oidMovimento: ${oidMovimento}\nagCedente:${agCedente}\nbeneficiario:${beneficiario}\nnossoNumero:${nossoNumero}\nseuNumero:${seuNumero}\nvlrNominal:${vlrNominal}\ndataOcorrencia:${dataOcorrencia}\nocorrencia:${ocorrencia}\ncodOcorrencia:${codOcorrencia}\nnumParcela:${numParcela}\nmotivo:${motivo}</arg>
 </arguments>
-<msg timestamp="20190702 10:07:12.019" level="INFO">oidMovimento: 1897724238
-agCedente:030701
-beneficiario:58069
-nossoNumero:191001386
-seuNumero:B919326461
-vlrNominal:46.4
-dataOcorrencia:2019-06-06T00:00:00-03:00
-ocorrencia:LIQUIDADO
-codOcorrencia:06
-numParcela:02
-motivo:00</msg>
-<status status="PASS" starttime="20190702 10:07:12.018" endtime="20190702 10:07:12.020"></status>
+<status status="PASS" starttime="20190702 11:40:16.936" endtime="20190702 11:40:16.937"></status>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
@@ -958,18 +914,18 @@ motivo:00</msg>
 <assign>
 <var>${count}</var>
 </assign>
-<msg timestamp="20190702 10:07:12.021" level="INFO">${count} = 4</msg>
-<status status="PASS" starttime="20190702 10:07:12.020" endtime="20190702 10:07:12.022"></status>
+<msg timestamp="20190702 11:40:16.938" level="INFO">${count} = 4</msg>
+<status status="PASS" starttime="20190702 11:40:16.937" endtime="20190702 11:40:16.938"></status>
 </kw>
-<status status="PASS" starttime="20190702 10:07:11.998" endtime="20190702 10:07:12.022"></status>
+<status status="PASS" starttime="20190702 11:40:16.927" endtime="20190702 11:40:16.938"></status>
 </kw>
-<status status="PASS" starttime="20190702 10:07:11.955" endtime="20190702 10:07:12.022"></status>
+<status status="PASS" starttime="20190702 11:40:16.880" endtime="20190702 11:40:16.938"></status>
 </kw>
-<status status="PASS" starttime="20190702 10:07:11.530" endtime="20190702 10:07:12.022"></status>
+<status status="PASS" starttime="20190702 11:40:16.624" endtime="20190702 11:40:16.938"></status>
 </kw>
-<status status="PASS" starttime="20190702 10:07:11.529" endtime="20190702 10:07:12.022" critical="yes"></status>
+<status status="PASS" starttime="20190702 11:40:16.624" endtime="20190702 11:40:16.939" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190702 10:07:09.862" endtime="20190702 10:07:12.024"></status>
+<status status="PASS" starttime="20190702 11:40:16.150" endtime="20190702 11:40:16.940"></status>
 </suite>
 <statistics>
 <total>

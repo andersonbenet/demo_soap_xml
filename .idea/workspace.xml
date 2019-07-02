@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="357910c1-7d91-4e26-a5c4-2a9dd3211f20" name="Default Changelist" comment="Add set xml">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource/ConsultaOcorrenciasTituloResource.robot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource/xml/consulta_ocorrencias_titulo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/ConsultaOcorrenciasTituloTest.robot" afterDir="false" />
+    <list default="true" id="357910c1-7d91-4e26-a5c4-2a9dd3211f20" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/ConsultaOcorrenciasTituloResource.robot" beforeDir="false" afterPath="$PROJECT_DIR$/resource/ConsultaOcorrenciasTituloResource.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/result/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/result/output.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/result/report.html" afterDir="false" />
@@ -23,10 +20,7 @@
         <entry file="file://$PROJECT_DIR$/test/ConsultaOcorrenciasTituloTest.robot">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#67#0" expanded="true" />
-              </folding>
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -34,11 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resource/ConsultaOcorrenciasTituloResource.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-              <folding>
-                <element signature="e#0#108#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -72,8 +63,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="119" />
-    <option name="y" value="-8" />
+    <option name="x" value="-1407" />
+    <option name="y" value="-5" />
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
@@ -167,16 +158,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562071664504</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add set xml">
+      <created>1562078378414</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562078378414</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19345239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19345239" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="0" visible="true" weight="0.3523654" />
+      <window_info anchor="bottom" id="Version Control" order="0" visible="true" weight="0.3523654" />
       <window_info anchor="bottom" id="Python Console" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32952693" />
       <window_info anchor="bottom" id="Message" order="3" />
@@ -243,20 +242,14 @@
     <entry file="file://$PROJECT_DIR$/test/ConsultaOcorrenciasTituloTest.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/ConsultaOcorrenciasTituloResource.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="e#0#108#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="304">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
         </state>
       </provider>
     </entry>
